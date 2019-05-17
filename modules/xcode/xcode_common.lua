@@ -40,6 +40,7 @@
 			[".icns"] = "Resources",
 			[".s"] = "Sources",
 			[".S"] = "Sources",
+			[".swift"] = "Sources",
 		}
 		if node.isResource then
 			return "Resources"
@@ -133,6 +134,7 @@
 			[".lua"]       = "sourcecode.lua",
 			[".m"]         = "sourcecode.c.objc",
 			[".mm"]        = "sourcecode.cpp.objc",
+			[".swift"]     = "sourcecode.swift",
 			[".nib"]       = "wrapper.nib",
 			[".storyboard"] = "file.storyboard",
 			[".pch"]       = "sourcecode.c.h",

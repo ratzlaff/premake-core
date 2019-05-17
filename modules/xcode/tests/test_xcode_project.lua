@@ -61,6 +61,17 @@
 		]]
 	end
 
+	function suite.PBXBuildFile_ListsSwiftSources()
+		files { "source.h", "hello.swift", "Info.plist" }
+		prepare()
+		xcode.PBXBuildFile(tr)
+		test.capture [[
+/* Begin PBXBuildFile section */
+		12FEC7BE43E2BFB056FAF5FE /* hello.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829A0F06A8C03EB80FC73546 /* hello.swift */; };
+/* End PBXBuildFile section */
+		]]
+	end
+
 	function suite.PBXBuildFile_ListsResourceFilesOnlyOnceWithGroupID()
 		files { "English.lproj/MainMenu.xib", "French.lproj/MainMenu.xib" }
 		prepare()
@@ -288,6 +299,17 @@
 /* Begin PBXFileReference section */
 		19A5C4E61D1697189E833B26 /* MyProject */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = MyProject; path = MyProject; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DC6D30C8137A53E02A4494C /* source.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; name = source.c; path = source.c; sourceTree = "<group>"; };
+		]]
+	end
+
+	function suite.PBXFileReference_ListsSwiftSourceFiles()
+		files { "source.swift" }
+		prepare()
+		xcode.PBXFileReference(tr)
+		test.capture [[
+/* Begin PBXFileReference section */
+		0B2BDAE0539CBF12983B9120 /* source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = source.swift; path = source.swift; sourceTree = "<group>"; };
+		19A5C4E61D1697189E833B26 /* MyProject */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = MyProject; path = MyProject; sourceTree = BUILT_PRODUCTS_DIR; };
 		]]
 	end
 
